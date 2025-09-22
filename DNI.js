@@ -15,4 +15,14 @@ function validacionDNI() {
         return 'Por favor, ingrese un número de DNI válido.';
     }
     
+    if (numDNI.length <0 || numDNI.length > 99999999) {
+        return "El número de DNI esta fuera del rango.";
+    }
+
+    if(letraDNI.trim().toUpperCase() === letras[numDNI % 23]) {
+        return 'El DNI es correcto.';
+    } else {
+        return 'El DNI es incorrecto.';
+    }
+    
 }
